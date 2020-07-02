@@ -5,6 +5,15 @@ Provides searching, searching with ranges, and sorting
 ## Installation
 
 You can install the package via composer:
+#### Add this setting inside composer.json
+```bash
+"repositories": [
+        {
+          "type": "git",
+          "url": "https://github.com/jianjye/laravel-basic-search.git"
+        }
+      ]
+```
 
 ```bash
 composer require jianjye/laravel-basic-search
