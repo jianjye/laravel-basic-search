@@ -1,11 +1,6 @@
-# Very short description of the package
+# Basic Laravel Searching
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/jianjye/laravel-basic-search.svg?style=flat-square)](https://packagist.org/packages/jianjye/laravel-basic-search)
-[![Build Status](https://img.shields.io/travis/jianjye/laravel-basic-search/master.svg?style=flat-square)](https://travis-ci.org/jianjye/laravel-basic-search)
-[![Quality Score](https://img.shields.io/scrutinizer/g/jianjye/laravel-basic-search.svg?style=flat-square)](https://scrutinizer-ci.com/g/jianjye/laravel-basic-search)
-[![Total Downloads](https://img.shields.io/packagist/dt/jianjye/laravel-basic-search.svg?style=flat-square)](https://packagist.org/packages/jianjye/laravel-basic-search)
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Provides searching, searching with ranges, and sorting
 
 ## Installation
 
@@ -17,23 +12,32 @@ composer require jianjye/laravel-basic-search
 
 ## Usage
 
+#### fuzzySearch - Search partialy
 ``` php
-// Usage description here
+\LaravelBasicSearch::fuzzySearch($request, $model, $fields, $ranges, $sorts);
+```
+
+#### fuzzySearch - Search exactly
+``` php
+\LaravelBasicSearch::search($request, $model, $fields, $ranges, $sorts);
+```
+
+#### Sorting Links
+``` php
+\LaravelBasicSearch::links($request, $sorts);
+```
+
+#### Sorting Icons
+``` php
+\LaravelBasicSearch::icons($request, $sorts);
 ```
 
 ### Testing
 
 ``` bash
-composer test
+php vendor/phpunit/phpunit/phpunit
 ```
 
-### Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
@@ -42,12 +46,8 @@ If you discover any security related issues, please email jj@mlcloud.dev instead
 ## Credits
 
 - [See Jian Jye](https://github.com/jianjye)
-- [All Contributors](../../contributors)
+- [Farhan Hadi](https://github.com/xitox97)
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
