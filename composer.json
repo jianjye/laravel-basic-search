@@ -1,0 +1,54 @@
+{
+    "name": "jianjye/laravel-basic-search",
+    "description": "Provide simple search services for laravel application",
+    "keywords": [
+        "jianjye",
+        "laravel-basic-search"
+    ],
+    "homepage": "https://github.com/jianjye/laravel-basic-search",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "See Jian Jye",
+            "email": "jj@mlcloud.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "illuminate/support": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jianjye\\LaravelBasicSearch\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jianjye\\LaravelBasicSearch\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jianjye\\LaravelBasicSearch\\LaravelBasicSearchServiceProvider"
+            ],
+            "aliases": {
+                "LaravelBasicSearch": "Jianjye\\LaravelBasicSearch\\LaravelBasicSearchFacade"
+            }
+        }
+    }
+}
