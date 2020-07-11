@@ -1,10 +1,10 @@
 <?php
 
-namespace Jianjye\LaravelBasicSearch;
+namespace JianJye\LaravelBasicSearch;
 
 class LaravelBasicSearch
 {
-    public static function search($request, $model, $fields, $ranges, $sorts)
+    public static function search($request, $model, $fields, $ranges = [], $sorts =[])
     {
         foreach ($fields as $field) {
             if (!empty($request->query($field))) {
@@ -31,7 +31,7 @@ class LaravelBasicSearch
         return $model;
     }
 
-    public static function fuzzySearch($request, $model, $fields, $ranges, $sorts)
+    public static function fuzzySearch($request, $model, $fields, $ranges = [], $sorts = [])
     {
         foreach ($fields as $field) {
             if (!empty($request->query($field))) {

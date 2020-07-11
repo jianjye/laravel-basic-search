@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Jianjye\\LaravelBasicSearch\\": "src"
+            "JianJye\\LaravelBasicSearch\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Jianjye\\LaravelBasicSearch\\Tests\\": "tests"
+            "JianJye\\LaravelBasicSearch\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jianjye\\LaravelBasicSearch\\LaravelBasicSearchServiceProvider"
+                "JianJye\\LaravelBasicSearch\\LaravelBasicSearchServiceProvider"
             ],
             "aliases": {
-                "LaravelBasicSearch": "Jianjye\\LaravelBasicSearch\\LaravelBasicSearchFacade"
+                "LaravelBasicSearch": "JianJye\\LaravelBasicSearch\\LaravelBasicSearchFacade"
             }
         }
     }

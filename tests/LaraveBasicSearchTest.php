@@ -1,12 +1,12 @@
 <?php
 
-namespace Jianjye\LaravelBasicSearch\Tests;
+namespace JianJye\LaravelBasicSearch\Tests;
 
 use Orchestra\Testbench\TestCase;
-use Jianjye\LaravelBasicSearch\LaravelBasicSearchServiceProvider;
-use Jianjye\LaravelBasicSearch\Models\Colour;
+use JianJye\LaravelBasicSearch\LaravelBasicSearchServiceProvider;
+use JianJye\LaravelBasicSearch\Models\Colour;
 use Illuminate\Http\Request;
-use Jianjye\LaravelBasicSearch\LaravelBasicSearch;
+use JianJye\LaravelBasicSearch\LaravelBasicSearch;
 
 class LaraveBasicSearchTest extends TestCase
 {

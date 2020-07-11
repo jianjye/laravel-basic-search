@@ -1,6 +1,6 @@
 <?php
 
-namespace Jianjye\LaravelBasicSearch\Models;
+namespace JianJye\LaravelBasicSearch\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

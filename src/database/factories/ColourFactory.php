@@ -1,7 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
-use Jianjye\LaravelBasicSearch\Models\Colour;
+use JianJye\LaravelBasicSearch\Models\Colour;
 
 $factory->define(Colour::class, function (Faker $faker) {
     return [

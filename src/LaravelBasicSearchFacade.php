@@ -1,11 +1,11 @@
 <?php
 
-namespace Jianjye\LaravelBasicSearch;
+namespace JianJye\LaravelBasicSearch;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Jianjye\LaravelBasicSearch\Skeleton\SkeletonClass
+ * @see \JianJye\LaravelBasicSearch\Skeleton\SkeletonClass
  */
 class LaravelBasicSearchFacade extends Facade
 {
