@@ -7,8 +7,6 @@ use JianJye\LaravelBasicSearchServiceProvider;
 use JianJye\Models\Colour;
 use Illuminate\Http\Request;
 use JianJye\LaravelBasicSearch;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\File;
 
 class LaraveBasicSearchTest extends TestCase
 {
