@@ -1,6 +1,6 @@
 <?php
 
-namespace JianJye\LaravelBasicSearch;
+namespace JianJye;
 
 class LaravelBasicSearch
 {

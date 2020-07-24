@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "JianJye\\LaravelBasicSearch\\": "src"
+            "JianJye\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JianJye\\LaravelBasicSearch\\Tests\\": "tests"
+            "Tests\\": "tests/"
         }
     },
     "scripts": {

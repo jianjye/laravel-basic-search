@@ -1,6 +1,6 @@
 <?php
 
-namespace JianJye\LaravelBasicSearch;
+namespace JianJye;
 
 use Illuminate\Support\ServiceProvider;
 
