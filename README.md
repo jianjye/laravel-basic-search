@@ -26,7 +26,7 @@ composer require jianjye/laravel-basic-search
 \LaravelBasicSearch::fuzzySearch($request, $model, $fields, $ranges, $sorts);
 ```
 
-#### fuzzySearch - Search exactly
+#### search - Search exactly
 ``` php
 \LaravelBasicSearch::search($request, $model, $fields, $ranges, $sorts);
 ```
