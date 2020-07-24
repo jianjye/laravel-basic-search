@@ -16,8 +16,7 @@
         }
     ],
     "require": {
-        "php": "^7.2.5",
-        "illuminate/support": "^7.0"
+        "php": "^7.2.5"
     },
     "require-dev": {
         "calebporzio/sushi": "^2.0",
@@ -45,11 +44,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "JianJye\\LaravelBasicSearch\\LaravelBasicSearchServiceProvider"
-            ],
-            "aliases": {
-                "LaravelBasicSearch": "JianJye\\LaravelBasicSearch\\LaravelBasicSearchFacade"
-            }
+                "JianJye\\LaravelBasicSearchServiceProvider"
+            ]
         }
     }
 }
