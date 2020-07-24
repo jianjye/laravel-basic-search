@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\File;
 
 class LaraveBasicSearchTest extends TestCase
 {
-
     protected function getPackageProviders($app)
     {
         return [LaravelBasicSearchServiceProvider::class];
@@ -47,7 +46,6 @@ class LaraveBasicSearchTest extends TestCase
     /** @test */
     public function using_fuzzy_search_function_success()
     {
-
         $fields = ['name'];
         $ranges = [];
         $sorts = ['name', 'created_at',];
