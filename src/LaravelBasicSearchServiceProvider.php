@@ -1,6 +1,6 @@
 <?php
 
-namespace JianJye\LaravelBasicSearch;
+namespace JianJye;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,7 +11,7 @@ class LaravelBasicSearchServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/database/factories');
+        //
     }
 
     /**

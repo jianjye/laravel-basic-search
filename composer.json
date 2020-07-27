@@ -16,21 +16,21 @@
         }
     ],
     "require": {
-        "php": "^7.2.5",
-        "illuminate/support": "^7.0"
+        "php": "^7.2.5"
     },
     "require-dev": {
+        "calebporzio/sushi": "^2.0",
         "orchestra/testbench": "^5.0",
         "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {
-            "JianJye\\LaravelBasicSearch\\": "src"
+            "JianJye\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JianJye\\LaravelBasicSearch\\Tests\\": "tests"
+            "Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -44,11 +44,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "JianJye\\LaravelBasicSearch\\LaravelBasicSearchServiceProvider"
-            ],
-            "aliases": {
-                "LaravelBasicSearch": "JianJye\\LaravelBasicSearch\\LaravelBasicSearchFacade"
-            }
+                "JianJye\\LaravelBasicSearchServiceProvider"
+            ]
         }
     }
 }
