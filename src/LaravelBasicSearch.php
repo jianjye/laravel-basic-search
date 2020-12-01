@@ -1,17 +1,16 @@
 <?php
 
 namespace JianJye;
-
-use Carbon\Carbon;
-
 class LaravelBasicSearch
 {
     public static function search($request, $model, $fields, $ranges = [], $sorts = [], $dates = [])
     {
         foreach ($dates as $date => $format) {
-            $request->merge([
-                $date => Carbon::createFromFormat($format, $request->query($date))->format('Y-m-d'),
-            ]);
+            if (!empty($request->query($date))) {
+                $request->merge([
+                    $date => \Carbon\Carbon::createFromFormat($format, $request->query($date))->format('Y-m-d'),
+                ]);
+            }
         }
 
         foreach ($fields as $field) {
@@ -42,9 +41,11 @@ class LaravelBasicSearch
     public static function fuzzySearch($request, $model, $fields, $ranges = [], $sorts = [], $dates = [])
     {
         foreach ($dates as $date => $format) {
-            $request->merge([
-                $date => Carbon::createFromFormat($format, $request->query($date))->format('Y-m-d'),
-            ]);
+            if (!empty($request->query($date))) {
+                $request->merge([
+                    $date => \Carbon\Carbon::createFromFormat($format, $request->query($date))->format('Y-m-d'),
+                ]);
+            }
         }
 
         foreach ($fields as $field) {
