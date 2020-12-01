@@ -16,13 +16,13 @@
         }
     ],
     "require": {
-        "php": "^7.2.5",
-        "nesbot/carbon": "^2.42"
+        "php": "^7.2.5"
     },
     "require-dev": {
         "calebporzio/sushi": "^2.0",
         "orchestra/testbench": "^5.0",
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^8.5",
+        "nesbot/carbon": "^2.31"
     },
     "autoload": {
         "psr-4": {
