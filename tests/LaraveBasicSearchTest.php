@@ -61,4 +61,35 @@ class LaraveBasicSearchTest extends TestCase
         $this->assertEquals(3, count($colours));
     }
 
+    /** @test */
+    public function search_using_custom_date_format_success()
+    {
+        $fields = ['date'];
+        $ranges = [];
+        $sorts = [];
+        $dates = ['date' => 'd-m-Y'];
+        $colours = new Colour();
+        $request = new Request();
+        $request->setMethod('GET');
+        $request->headers->set('key','value');
+        $request->query->add(['date' => '29-04-2020']);
+
+        $colours = LaravelBasicSearch::fuzzySearch($request, $colours, $fields, $ranges, $sorts, $dates);
+        $colours = $colours->first();
+
+        $this->assertSame($colours->id, 4);
+        $this->assertSame($colours->name, 'black');
+        $this->assertSame($colours->date, '2020-04-29');
+
+        $dates = ['date' => 'd/m/Y'];
+        $request->query->add(['date' => '13/05/2020']);
+
+        $colours = LaravelBasicSearch::search($request, $colours, $fields, $ranges, $sorts, $dates);
+        $colours = $colours->first();
+
+        $this->assertSame($colours->id, 5);
+        $this->assertSame($colours->name, 'light black');
+        $this->assertSame($colours->date, '2020-05-13');
+    }
+
 }
