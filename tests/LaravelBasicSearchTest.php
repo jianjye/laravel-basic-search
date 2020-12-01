@@ -8,7 +8,7 @@ use JianJye\Models\Colour;
 use Illuminate\Http\Request;
 use JianJye\LaravelBasicSearch;
 
-class LaraveBasicSearchTest extends TestCase
+class LaravelBasicSearchTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
