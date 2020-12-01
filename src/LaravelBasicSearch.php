@@ -8,9 +8,9 @@ class LaravelBasicSearch
 {
     public static function search($request, $model, $fields, $ranges = [], $sorts = [], $dates = [])
     {
-        foreach ($dates as $date) {
+        foreach ($dates as $date => $format) {
             $request->merge([
-                $date => Carbon::parse($request->query($date))->format('Y-m-d'),
+                $date => Carbon::createFromFormat($format, $request->query($date))->format('Y-m-d'),
             ]);
         }
 
@@ -41,9 +41,9 @@ class LaravelBasicSearch
 
     public static function fuzzySearch($request, $model, $fields, $ranges = [], $sorts = [], $dates = [])
     {
-        foreach ($dates as $date) {
+        foreach ($dates as $date => $format) {
             $request->merge([
-                $date => Carbon::parse($request->query($date))->format('Y-m-d'),
+                $date => Carbon::createFromFormat($format, $request->query($date))->format('Y-m-d'),
             ]);
         }
 
