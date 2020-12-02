@@ -16,4 +16,8 @@ class Colour extends Model
         ['id' => 5, 'name' => 'light black', 'date' => '2020-05-13'],
         ['id' => 6, 'name' => 'dark black', 'date' => '2020-06-22'],
     ];
+
+    protected $dates = [
+        'date'
+    ];
 }

@@ -79,17 +79,17 @@ class LaravelBasicSearchTest extends TestCase
 
         $this->assertSame($colours->id, 4);
         $this->assertSame($colours->name, 'black');
-        $this->assertSame($colours->date, '2020-04-29');
+        $this->assertSame($colours->date->format('d-m-Y'), '29-04-2020');
 
+        //different format
         $dates = ['date' => 'd/m/Y'];
         $request->query->add(['date' => '13/05/2020']);
-
         $colours = LaravelBasicSearch::search($request, $colours, $fields, $ranges, $sorts, $dates);
         $colours = $colours->first();
 
         $this->assertSame($colours->id, 5);
         $this->assertSame($colours->name, 'light black');
-        $this->assertSame($colours->date, '2020-05-13');
+        $this->assertSame($colours->date->format('d/m/Y'), '13/05/2020');
     }
 
 }
