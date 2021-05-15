@@ -31,6 +31,13 @@ composer require jianjye/laravel-basic-search
 \LaravelBasicSearch::search($request, $model, $fields, $ranges, $sorts);
 ```
 
+#### Searching with custom date
+``` php
+$dates = ['date_field' => 'd-m-Y'];
+
+\LaravelBasicSearch::search($request, $model, $fields, $ranges, $sorts, $dates);
+```
+
 #### Sorting Links
 ``` php
 \LaravelBasicSearch::links($request, $sorts);

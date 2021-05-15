@@ -1,11 +1,18 @@
 <?php
 
 namespace JianJye;
-
 class LaravelBasicSearch
 {
-    public static function search($request, $model, $fields, $ranges = [], $sorts =[])
+    public static function search($request, $model, $fields, $ranges = [], $sorts = [], $dates = [])
     {
+        foreach ($dates as $date => $format) {
+            if (!empty($request->query($date))) {
+                $request->merge([
+                    $date => \Carbon\Carbon::createFromFormat($format, $request->query($date))->format('Y-m-d'),
+                ]);
+            }
+        }
+
         foreach ($fields as $field) {
             if (!empty($request->query($field))) {
                 $model = $model->where($field, $request->query($field));
@@ -31,8 +38,16 @@ class LaravelBasicSearch
         return $model;
     }
 
-    public static function fuzzySearch($request, $model, $fields, $ranges = [], $sorts = [])
+    public static function fuzzySearch($request, $model, $fields, $ranges = [], $sorts = [], $dates = [])
     {
+        foreach ($dates as $date => $format) {
+            if (!empty($request->query($date))) {
+                $request->merge([
+                    $date => \Carbon\Carbon::createFromFormat($format, $request->query($date))->format('Y-m-d'),
+                ]);
+            }
+        }
+
         foreach ($fields as $field) {
             if (!empty($request->query($field))) {
                 $model = $model->where($field, 'like', '%' . $request->query($field) . '%');

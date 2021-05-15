@@ -8,7 +8,7 @@ use JianJye\Models\Colour;
 use Illuminate\Http\Request;
 use JianJye\LaravelBasicSearch;
 
-class LaraveBasicSearchTest extends TestCase
+class LaravelBasicSearchTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
@@ -59,6 +59,37 @@ class LaraveBasicSearchTest extends TestCase
         $colours = $colours->get();
 
         $this->assertEquals(3, count($colours));
+    }
+
+    /** @test */
+    public function search_using_custom_date_format_success()
+    {
+        $fields = ['date'];
+        $ranges = [];
+        $sorts = [];
+        $dates = ['date' => 'd-m-Y'];
+        $colours = new Colour();
+        $request = new Request();
+        $request->setMethod('GET');
+        $request->headers->set('key','value');
+        $request->query->add(['date' => '29-04-2020']);
+
+        $colours = LaravelBasicSearch::fuzzySearch($request, $colours, $fields, $ranges, $sorts, $dates);
+        $colours = $colours->first();
+
+        $this->assertSame($colours->id, 4);
+        $this->assertSame($colours->name, 'black');
+        $this->assertSame($colours->date->format('d-m-Y'), '29-04-2020');
+
+        //different format
+        $dates = ['date' => 'd/m/Y'];
+        $request->query->add(['date' => '13/05/2020']);
+        $colours = LaravelBasicSearch::search($request, $colours, $fields, $ranges, $sorts, $dates);
+        $colours = $colours->first();
+
+        $this->assertSame($colours->id, 5);
+        $this->assertSame($colours->name, 'light black');
+        $this->assertSame($colours->date->format('d/m/Y'), '13/05/2020');
     }
 
 }
