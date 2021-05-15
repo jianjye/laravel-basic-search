@@ -5,30 +5,20 @@ Provides searching, searching with ranges, and sorting
 ## Installation
 
 You can install the package via composer:
-#### Add this setting inside composer.json
-```bash
-"repositories": [
-        {
-          "type": "git",
-          "url": "https://github.com/jianjye/laravel-basic-search.git"
-        }
-      ]
-```
-
 ```bash
 composer require jianjye/laravel-basic-search
 ```
 
 ## Usage
 
-#### fuzzySearch - Search partialy
-``` php
-\LaravelBasicSearch::fuzzySearch($request, $model, $fields, $ranges, $sorts);
-```
-
-#### search - Search exactly
+#### `search` - Search with exact match
 ``` php
 \LaravelBasicSearch::search($request, $model, $fields, $ranges, $sorts);
+```
+
+#### `fuzzySearch` - Search with partial match `%LIKE%`
+``` php
+\LaravelBasicSearch::fuzzySearch($request, $model, $fields, $ranges, $sorts);
 ```
 
 #### Searching with custom date
@@ -38,12 +28,12 @@ $dates = ['date_field' => 'd-m-Y'];
 \LaravelBasicSearch::search($request, $model, $fields, $ranges, $sorts, $dates);
 ```
 
-#### Sorting Links
+#### Sorting Links (to be used in Blade)
 ``` php
 \LaravelBasicSearch::links($request, $sorts);
 ```
 
-#### Sorting Icons
+#### Sorting Icons (to be used in Blade)
 ``` php
 \LaravelBasicSearch::icons($request, $sorts);
 ```
@@ -53,11 +43,6 @@ $dates = ['date_field' => 'd-m-Y'];
 ``` bash
 php vendor/phpunit/phpunit/phpunit
 ```
-
-
-### Security
-
-If you discover any security related issues, please email jj@mlcloud.dev instead of using the issue tracker.
 
 ## Credits
 
